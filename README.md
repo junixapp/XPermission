@@ -6,9 +6,10 @@
 
 
 ## 使用
+![Download](https://api.bintray.com/packages/li-xiaojun/jrepo/xpermission/images/download.svg)
 首先添加依赖：
 ```groovy
-implementation 'com.lxj:xpermission:0.0.1'
+implementation 'com.lxj:xpermission:最新版本号'
 ```
 
 - 申请权限
