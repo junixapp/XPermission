@@ -24,14 +24,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:appcompat-v7:26.0.0'
 }
 
 publish {
     userOrg = 'li-xiaojun'
     groupId = 'com.lxj'
     artifactId = 'xpermission'
-    publishVersion = '0.0.1'
+    publishVersion = '0.0.2'
     repoName = 'jrepo'
     desc = '一行代码进行权限申请！'
     website = 'https://github.com/li-xiaojun/XPermission'
