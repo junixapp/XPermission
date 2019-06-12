@@ -186,7 +186,9 @@ public final class XPermission {
      * @return the single {@link XPermission} instance
      */
     public static XPermission create(Context context, @PermissionConstants.Permission final String... permissions) {
-        return sInstance == null ? new XPermission(context, permissions) : sInstance;
+        if(sInstance == null) return new XPermission(context, permissions);
+        sInstance.prepare(permissions);
+        return sInstance;
     }
 
     public static XPermission create(Context context) {
@@ -203,6 +205,10 @@ public final class XPermission {
     private XPermission(Context ctx, final String... permissions) {
         sInstance = this;
         context = ctx;
+        prepare(permissions);
+    }
+
+    private void prepare(final String... permissions){
         mPermissions = new LinkedHashSet<>();
         PERMISSIONS = getPermissions();
         if (permissions == null) return;
@@ -454,10 +460,6 @@ public final class XPermission {
             finish();
         }
     }
-
-    ///////////////////////////////////////////////////////////////////////////
-    // interface
-    ///////////////////////////////////////////////////////////////////////////
 
     public interface OnRationaleListener {
 
